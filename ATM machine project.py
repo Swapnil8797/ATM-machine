@@ -36,7 +36,7 @@ if pin == password:
 
         try:    
              #taking an option from user
-            option = int(input("Please enter your choise "))
+            option = int(input("Please enter your choice "))
         except:
             print("Please enter valid option")
         
@@ -47,12 +47,13 @@ if pin == password:
         if option == 2:
 
             withdraw_amount = int(input("please enter withdraw_amount "))
-
             
+            if balance >= withdraw_amount:
+              balance -= withdraw_amount
+              print(f"{withdraw_amount} is debited from your account")
 
-            balance = balance - withdraw_amount
-
-            print(f"{withdraw_amount} is debited from your account")
+            else:
+              print("insufficient balance")
 
             
 
@@ -86,7 +87,3 @@ else:
 
 
 # In[ ]:
-
-
-
-
